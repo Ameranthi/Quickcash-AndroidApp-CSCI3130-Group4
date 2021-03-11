@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/dashboardFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/dashboardFragment"
@@ -49,7 +49,12 @@
         android:label="fragment_splash2"
         tools:layout="@layout/fragment_splash2" >
         <action
-            android:id="@+id/action_splashFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_splashFragment_to_mapsActivity"
+            app:destination="@id/mapsActivity" />
     </fragment>
+    <activity
+        android:id="@+id/mapsActivity"
+        android:name="com.example.quickcash.MapsActivity"
+        android:label="activity_maps"
+        tools:layout="@layout/activity_maps" />
 </navigation>
