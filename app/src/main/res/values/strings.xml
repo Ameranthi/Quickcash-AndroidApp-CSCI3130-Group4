@@ -13,4 +13,6 @@
     <string name="START_DATE_KEY">START_DATE_KEY</string>
     <string name="END_DATE_KEY">END_DATE_KEY</string>
     <string name="logout_button">logout button</string>
+    <string name="google_map_api_key">AIzaSyCnbZRLNwz_MMjjF4OYxJ2eYBVHAkR_af4</string>
+
 </resources>
