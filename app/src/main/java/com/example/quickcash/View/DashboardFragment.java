@@ -62,24 +62,24 @@ public class DashboardFragment extends Fragment implements OnMapReadyCallback{
     @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            // Inflate the layout for this fragment
-            inflater.inflate(R.layout.fragment_dashboard, container, false);
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-            viewModel = new ViewModelProvider(this).get(AddTaskViewModel.class);
-            binding =  FragmentDashboardBinding.inflate(inflater, container, false);
+        viewModel = new ViewModelProvider(this).get(AddTaskViewModel.class);
+        binding = FragmentDashboardBinding.inflate(inflater, container, false);
 
-            binding.setViewModel(viewModel);
-            dashMap = view.findViewById(R.id.dashMapView);
-            Bundle mapViewBundle = null;
-            if (savedInstanceState != null) {
-                mapViewBundle = savedInstanceState.getBundle(Constants.MAPVIEW_BUNDLE_KEY);
-            }
-
-            dashMap.onCreate(mapViewBundle);
-
-            dashMap.getMapAsync((OnMapReadyCallback) this);
-            return binding.getRoot();
+        binding.setViewModel(viewModel);
+        dashMap = view.findViewById(R.id.dashMapView);
+        Bundle mapViewBundle = null;
+        if (savedInstanceState != null) {
+            mapViewBundle = savedInstanceState.getBundle(Constants.MAPVIEW_BUNDLE_KEY);
         }
+
+        dashMap.onCreate(mapViewBundle);
+
+        dashMap.getMapAsync((OnMapReadyCallback) this);
+        return binding.getRoot();
+    }
 
 
         @Override
@@ -92,7 +92,7 @@ public class DashboardFragment extends Fragment implements OnMapReadyCallback{
                     getReference().child("TASKS");
             //Getting the query from Firebase
             options = new FirebaseRecyclerOptions.Builder<Task>().setLifecycleOwner(getViewLifecycleOwner()).setQuery(query, Task.class).build();
-            //Instaniating the adapter
+            //Instantiating the adapter
             taskAdapter = new TaskAdapter(options, getActivity().getApplicationContext(), Navigation.findNavController(view));
             //Finding the recyclerview
             taskListRecyclerView = getView().findViewById(R.id.taskListRecyclerView);
