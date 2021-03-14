@@ -80,6 +80,14 @@
 
             </androidx.recyclerview.widget.RecyclerView>
 
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/dashMapView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="3"
+                android:visibility="visible"
+                tools:visibility="visible" />
+
             <include
                 android:id="@+id/dashboardTaskBar"
                 layout="@layout/taskbar"/>
