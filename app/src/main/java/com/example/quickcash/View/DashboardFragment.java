@@ -1,20 +1,14 @@
 package com.example.quickcash.View;
 
-<<<<<<< HEAD
 import android.content.SharedPreferences;
-=======
 import android.Manifest;
 import android.content.pm.PackageManager;
->>>>>>> 2bcefbe (added mapview into dashboard fragment but map doesnt display)
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-<<<<<<< HEAD
 import androidx.appcompat.app.AppCompatActivity;
-=======
 import androidx.core.app.ActivityCompat;
->>>>>>> 2bcefbe (added mapview into dashboard fragment but map doesnt display)
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
@@ -52,6 +46,7 @@ public class DashboardFragment extends Fragment implements OnMapReadyCallback{
         SharedPreferences sharedPreferences;
         SharedPreferences.Editor editor;
         private MapView dashMap;
+
         public DashboardFragment() {
             // Required empty public constructor
         }
