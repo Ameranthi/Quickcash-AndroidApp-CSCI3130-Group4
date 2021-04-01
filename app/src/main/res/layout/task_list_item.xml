@@ -22,60 +22,114 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="165dp"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="292dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/itemHeadline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:padding="10dp"
+                        tools:text="headline" />
+
+                    <TextView
+                        android:id="@+id/itemWage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10dp"
+                        tools:text="wage" />
+
+                    <ImageView
+                        android:id="@+id/urgencyIndicator"
+                        android:layout_width="49dp"
+                        android:layout_height="64dp"
+                        android:backgroundTint="@color/quickcashgreen"
+                        android:scaleType="fitStart"
+                        app:srcCompat="@drawable/ic_exclamation_mark_in_a_circle" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/itemDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:padding="10dp"
+                    tools:text="description" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/itemLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:padding="10dp"
+                        tools:text="location" />
+
+                    <TextView
+                        android:id="@+id/itemTaskType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:padding="10dp"
+                        tools:text="task type" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/itemDistance"
+                    android:layout_width="159dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:textAlignment="viewStart"
+                    tools:text="distance" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/itemHeadline"
-                    android:layout_width="175dp"
-                    android:layout_height="51dp"
-                    android:padding="10dp" />
+                <ImageView
+                    android:id="@+id/viewMapButton"
+                    android:layout_width="49dp"
+                    android:layout_height="62dp"
+                    android:layout_gravity="center"
+                    android:background="@color/quickcashgreen"
+                    android:scaleType="fitStart"
+                    app:srcCompat="@android:drawable/ic_dialog_map" />
 
-                <TextView
-                    android:id="@+id/itemWage"
-                    android:layout_width="167dp"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp" />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/itemDescription"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:padding="10dp" />
-
-            <LinearLayout
-                android:layout_width="339dp"
-                android:layout_height="38dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/itemLocation"
-                    android:layout_width="182dp"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp" />
-
-                <TextView
-                    android:id="@+id/itemTaskType"
-                    android:layout_width="185dp"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp" />
+                <ImageView
+                    android:id="@+id/viewDetailsButton"
+                    android:layout_width="69dp"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center"
+                    android:background="@color/quickcashgreen"
+                    android:rotation="180"
+                    android:scaleType="fitStart"
+                    app:srcCompat="@drawable/abc_vector_test" />
 
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/itemDistance"
-                android:layout_width="159dp"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textAlignment="viewStart" />
 
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

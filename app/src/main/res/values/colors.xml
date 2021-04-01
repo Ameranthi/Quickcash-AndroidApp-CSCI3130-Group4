@@ -12,7 +12,13 @@
     <color name="quickcashactive">#282B55</color>
     <color name="quickcashinactive">#EEF9BF</color>
     <color name="quickcashlightgreen">#A7E9AF</color>
-
+    <color name="quickcashbabysitting"> </color>
+    <color name="quickcashcleaning"></color>
+    <color name="quickcashyardwork"></color>
+    <color name="quickcashlabour"></color>
+    <color name="quickcashgardening"></color>
+    <color name="quickcashother"></color>
+    <color name="quickcashhousework"></color>
 <!--    <color name="quickcashdarkgreen">#669383</color>-->
     <color name="quickcashwhite">#FFFFFF</color>
 </resources>

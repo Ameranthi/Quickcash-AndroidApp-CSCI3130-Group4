@@ -39,6 +39,9 @@
             <action
                 android:id="@+id/helperDashboardToMyProfile"
                 app:destination="@id/helperMyProfileFragment" />
+            <action
+                android:id="@+id/helperDashboardToMap"
+                app:destination="@id/mapFragment" />
         </fragment>
         <fragment
             android:id="@+id/helperNotifications"
@@ -77,6 +80,15 @@
             tools:layout="@layout/fragment_helper_my_profile" >
             <action
                 android:id="@+id/helperMyProfileToDashboard"
+                app:destination="@id/helperDashboard" />
+        </fragment>
+        <fragment
+            android:id="@+id/mapFragment"
+            android:name="com.example.quickcash.View.MapFragment"
+            android:label="fragment_map"
+            tools:layout="@layout/fragment_map" >
+            <action
+                android:id="@+id/mapToHelperDashboard"
                 app:destination="@id/helperDashboard" />
         </fragment>
     </navigation>

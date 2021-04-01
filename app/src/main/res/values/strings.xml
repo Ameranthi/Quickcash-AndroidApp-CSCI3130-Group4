@@ -14,4 +14,4 @@
     <string name="logout_button">logout button</string>
 </resources>
 
-<!--TODO: Turn this into a string array: enum TaskType{cleaning, gardening, housework, labour, babysitting}-->
+    <!--TODO: Turn this into a string array: enum TaskType{cleaning, gardening, housework, labour, babysitting}-->

@@ -5,6 +5,7 @@ import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
@@ -44,6 +45,7 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<Task, TaskAdapter.TaskV
     protected void  onBindViewHolder(TaskViewHolder holder,
                                      int position, @NonNull Task currentTask) {
 
+
         holder.description.setText(currentTask.getDescription());
         holder.headline.setText(currentTask.getHeadline());
         holder.wage.setText(currentTask.getWage());
@@ -51,15 +53,37 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<Task, TaskAdapter.TaskV
 
         holder.location.setText(currentTask.getWage());
 
-        holder.itemView.findViewById(R.id.list_item).setOnClickListener(v -> {
-            putString(R.string.DESCRIPTION_KEY, currentTask.getDescription());
-            putString(R.string.HEADLINE_KEY, currentTask.getHeadline());
-            putString(R.string.WAGE_KEY, currentTask.getWage());
-            putString(R.string.START_DATE_KEY, currentTask.getStartDate().toString());
-            putString(R.string.START_DATE_KEY, currentTask.getStartDate().toString());
-            editor.putBoolean("URGENT", currentTask.isUrgent());
-            editor.apply();
-            navController.navigate(R.id.helperDashboardToTaskDetail);
+        if(currentTask.isUrgent()) {
+            holder.urgency.setVisibility(View.VISIBLE);
+        }
+        else holder.urgency.setVisibility(View.GONE);
+
+        holder.map.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                putString(R.string.DESCRIPTION_KEY, currentTask.getDescription());
+                putString(R.string.HEADLINE_KEY, currentTask.getHeadline());
+                putString(R.string.WAGE_KEY, currentTask.getWage());
+                putString(R.string.START_DATE_KEY, currentTask.getStartDate().toString());
+                putString(R.string.START_DATE_KEY, currentTask.getStartDate().toString());
+                editor.putBoolean("URGENT", currentTask.isUrgent());
+                editor.apply();
+                navController.navigate(R.id.helperDashboardToMap);
+            }
+        });
+
+        holder.details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                putString(R.string.DESCRIPTION_KEY, currentTask.getDescription());
+                putString(R.string.HEADLINE_KEY, currentTask.getHeadline());
+                putString(R.string.WAGE_KEY, currentTask.getWage());
+                putString(R.string.START_DATE_KEY, currentTask.getStartDate().toString());
+                putString(R.string.START_DATE_KEY, currentTask.getStartDate().toString());
+                editor.putBoolean("URGENT", currentTask.isUrgent());
+                editor.apply();
+                navController.navigate(R.id.helperDashboardToTaskDetail);
+            }
         });
 
     }
@@ -73,6 +97,7 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<Task, TaskAdapter.TaskV
         final TextView headline;
         final TextView distance;
         final TextView location;
+        ImageView urgency, map, details;
         public TaskViewHolder(@NonNull View itemView)
         {
             super(itemView);
@@ -82,6 +107,9 @@ public class TaskAdapter extends FirebaseRecyclerAdapter<Task, TaskAdapter.TaskV
             headline = itemView.findViewById(R.id.itemHeadline);
             distance = itemView.findViewById(R.id.itemDistance);
             location = itemView.findViewById(R.id.itemLocation);
+            urgency = itemView.findViewById(R.id.urgencyIndicator);
+            map = itemView.findViewById(R.id.viewMapButton);
+            details = itemView.findViewById(R.id.viewDetailsButton);
         }
     }
 
